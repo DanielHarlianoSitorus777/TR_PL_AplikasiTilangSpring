@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Data Penilangan</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2 align='center'><u>Data Penilangan</u></h2>
+       
+        <form th:object="${tilang}" th:action="@{save}" method="POST">
+            <table border='0' align='center'>
+                <tr>
+                    <td>ID Tilang</td>
+                    <td> <input type="number" th:field="*{tilangId}" /> </td> 
+                </tr>
+                <tr>
+                    <td>Nama Pelaku</td>
+                    <td><input type="text" th:field="*{tilangName}" /> </td>
+                </tr>
+                <tr>
+                    <td colspan='2' align='center'>&ensp;&ensp;&ensp;<input type="submit" value="Save" name="Save" /></td>
+                </tr>
+            </table>
+        </form>
+        
+        <br/>
+        
+        <table border="1" align='center' cellpadding='7' width='50%'>
+            <thead>
+                <tr bgcolor='blue' style='color:white'>
+                    <th>ID Tilang</th>
+                    <th>Nama</th>
+                    <th>Plat</th>
+                    <th>Tipe Pelanggaran</th>
+                    <th>Kendaraan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr bgcolor='#e6e6ff' align='center' th:each="as : ${tilangs}">
+                    <td th:text="${as.tilangId}"></td>
+                    <td th:text="${as.tilangName}"></td>
+                    <td th:text="${as.tilangPlat}"></td>
+                    <td th:text="${as.tilangPelanggaran}"></td>
+                    <td th:text="${as.tilangKendaraan}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+        <h2 align='center'><u>Hapus Data</u></h2>
+        <form th:object="${tilang}" th:action="@{delete}" method="POST">
+            <table border='0' align='center'>
+                <tr>
+                    <td>ID Tilang</td><td><input type="number" th:field="*{tilangId}" /></td>
+                </tr>    
+                <tr>
+                    <td colspan='2' align='center'><input type="submit" value="Delete" name="Save" /></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
