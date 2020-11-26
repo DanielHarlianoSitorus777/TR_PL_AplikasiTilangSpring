@@ -13,5 +13,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author ivanr
  */
 public interface TilangRepository extends JpaRepository<Tilang, Integer>{
-    
+    Tilang findByTilangName(final String tilangName);
 }

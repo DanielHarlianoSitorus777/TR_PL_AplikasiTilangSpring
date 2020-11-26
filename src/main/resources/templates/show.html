@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="default">
+    <head>
+        <title>Lihat Penilangan</title>
+    </head>
+    <body>
+        <div layout:fragment="content" class="row">
+            <div class="col-xs-8 col-md-8">
+                <h3>
+                    <a href="/tilang" class="btn btn-primary"><span class="glyphicon glyphicon-list"></span>Buat Penilangan</a>
+                </h3>
+                <h2 th:text="${tilang.tilangName}"></h2>
+                <h2 th:text="${tilang.tilangPlat}"></h2>
+                <h2 th:text="${tilang.tilangPelanggaran}"></h2>
+                <h2 th:text="${tilang.tilangKendaraan}"></h2>
+                <form action="/delete">
+                    <input type="hidden" name="tilangId" th:value="${tilang.tilangId}" />
+                    <h2><input type="submit" class="btn btn-danger" value="Delete" onclick="return confirm('Anda yakin?');" />
+                        <a th:href="@{'/edit/' + ${tilang.tilangId}}" class="btn btn-warning">Edit</a></h2>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
