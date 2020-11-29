@@ -110,4 +110,9 @@ public class MainController {
         
         return "redirect:/tilang";
     }
+    
+    @RequestMapping("/index")
+    public String index(Model model){
+        return "index";
+    }
 }
