@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Home Penilangan</title>
+    </head>
+    <body>
+        <h1 th:inline="text">Selamat datang [[${#httpServletRequest.remoteUser}]]!</h1>
+
+        <p>Klik <a th:href="@{/tilang}">disini</a> untuk masuk ke menu utama</p>
+    </body>
+</html>
