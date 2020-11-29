@@ -76,7 +76,7 @@ public class MainController {
         tilang.setTilangKendaraan(tilangKendaraan);
         tilangRepository.save(tilang);
         
-        return "redirect:/show/" + tilang.getTilangId();
+        return "redirect:/tilang";
     }
     
     @RequestMapping("/show/{tilangId}")
@@ -111,6 +111,6 @@ public class MainController {
         tilang.setTilangKendaraan(tilangKendaraan);
         tilangRepository.save(tilang);
         
-        return "redirect:/show/" + tilang.getTilangId();
+        return "redirect:/tilang";
     }
 }
